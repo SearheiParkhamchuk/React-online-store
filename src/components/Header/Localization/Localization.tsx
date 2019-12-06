@@ -16,7 +16,7 @@ interface ILocalizationState {
 class Localization extends React.Component<ILocalizationProps, ILocalizationState> {
 	constructor(props: ILocalizationProps) {
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
+		this.togglePopupVisible = this.togglePopupVisible.bind(this);
 		this.chooseLanguage = this.chooseLanguage.bind(this);
 		this.getPopupBody = this.getPopupBody.bind(this);
 
@@ -25,12 +25,12 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 		};
 	}
 
-	private handleClick() {
+	private togglePopupVisible() {
 		this.setState((prevState: ILocalizationState) => ({ popupVisible: !prevState.popupVisible }));
 	}
 
 	private chooseLanguage(id: number) {
-		this.handleClick();
+		this.togglePopupVisible();
 		this.props.setLang(id);
 	}
 
@@ -54,13 +54,13 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 			<>
 				<LanguageItem
 					{...this.props.lang}
-					itemHandler={this.handleClick}
+					itemHandler={this.togglePopupVisible}
 				/>
 				{
 					this.state.popupVisible &&
 					(
 						<Popup
-							toggleVisibility={this.handleClick}
+							toggleVisibility={this.togglePopupVisible}
 							render={this.getPopupBody}
 						/>
 					)

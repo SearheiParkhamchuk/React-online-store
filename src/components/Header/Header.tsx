@@ -15,6 +15,7 @@ const Header: React.FunctionComponent<IHeaderProps> = (props: IHeaderProps) => {
 			<span>Need Help? Call 0900 800 900</span>
 			<Navigation />
 			<LocalizationContainer/>
+			
 		</>
 	);
 };

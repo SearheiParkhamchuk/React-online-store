@@ -18,6 +18,7 @@ class LocalizationContainer extends React.Component<ILocalizationContainerProps>
 	}
 
 	private getLangById(id: number): ILangItem {
+		/// TODO replace this.props.langs[0]
 		return this.props.langs.find((lang: ILangItem) => lang.id === id) || this.props.langs[0];
 	}
 
