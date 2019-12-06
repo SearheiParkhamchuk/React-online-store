@@ -1,0 +1,31 @@
+.listItems li {
+    display: inline-block;
+}
+
+.navLeft, .navRight {
+    display: inline-block;
+}
+
+.navLeft {
+    margin-right: 50px;
+}
+
+.navLeft li {
+    margin-right: 20px;
+}
+
+.navLeft li:last-child {
+    margin-right: 0;
+}
+
+.navRight {
+
+}
+
+.navRight li {
+    margin-right: 50px;
+}
+
+.navRight li:last-child {
+    margin-right: 0;
+}

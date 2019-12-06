@@ -20,3 +20,20 @@
 .App-link {
   color: #09d3ac;
 }
+
+.header-wrapper {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.clear-list-styles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Montserrat, Helvetica, Arial,sans-serif;
+  font-size: 13px;
+  line-height: 22px;
+}
