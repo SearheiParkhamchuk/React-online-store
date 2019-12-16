@@ -1,11 +1,16 @@
 import * as  React from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
+import { AppState } from '../../redux/store';
 
 interface IHeaderState {}
-interface IHeaderProps {}
+interface IHeaderProps {
+	isDark: boolean;
+}
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (state: AppState) => ({
+	isDark: state.app.isDark,
+});
 const mapDispatchToProps = {};
 
 type Props = IHeaderProps;
