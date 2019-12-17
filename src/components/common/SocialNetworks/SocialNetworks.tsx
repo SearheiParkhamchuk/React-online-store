@@ -36,7 +36,7 @@ const SocialNetworks: React.FunctionComponent<ISocialNetworksProps> = ({ isDark,
 		return (
 			<li key={item.name} className={styles.listItem}>
 				<a href='' title={isShort ? item.name : ''}>
-					<i className={`${item.icon}`}/>
+					<i className={`${item.icon} ${styles.icon}`}/>
 				</a>
 			</li>
 		);

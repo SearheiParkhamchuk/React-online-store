@@ -12,14 +12,14 @@ type Search = React.FunctionComponent<InjectedFormProps<ISearchFromData, ISearch
 const Search: Search = (props) => {
 	const { isDark, handleSubmit } = props;
 	return (
-		<div className={`${styles.searchContainer} ${isDark ? styles.dark : styles.light}`}>
+		<div className={`${styles.searchContainer}`}>
 			<form>
 				<span className={`fas fa-search ${styles.searchIcon}`} onClick={handleSubmit}/>
 				<Field
 					component={'input'}
 					name='search'
 					placeholder='Search...'
-					className={`${styles.searchField}`}
+					className={`${styles.searchField} ${isDark ? styles.dark : styles.light}`}
 				/>
 			</form>
 		</div>

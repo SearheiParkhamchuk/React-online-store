@@ -2,6 +2,18 @@
     display: inline-block;
 }
 
+.listItems li a {
+    display: block;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+}
+
+.listItems li a:hover {
+    color: #111;
+}
+
 .navLeft, .navRight {
     display: inline-block;
 }
@@ -24,6 +36,10 @@
 
 .navRight li {
     margin-right: 50px;
+}
+
+.navRight li a{
+    font-weight: 700;
 }
 
 .navRight li:last-child {

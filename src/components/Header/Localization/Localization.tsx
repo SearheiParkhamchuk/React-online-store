@@ -2,6 +2,7 @@ import * as React from 'react';
 import Popup from '../../common/Popup/Popup';
 import LanguageItem from '../../common/Language/LanguageItem';
 import { ILangItem } from '../../../entities/App';
+import styles from './styles.module.css';
 
 interface ILocalizationProps {
 	lang: ILangItem;
@@ -43,7 +44,7 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 
 	private getPopupBody() {
 		return (
-			<ul className={'clear-list-styles'}>
+			<ul className={`clear-list-styles ${styles.innerPopupContent}`}>
 				{this.getLanguagesItemsJSX(this.props.langs)}
 			</ul>
 		);
@@ -51,7 +52,7 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 
 	public render() {
 		return (
-			<>
+			<div className={styles.langWrapper}>
 				<LanguageItem
 					{...this.props.lang}
 					itemHandler={this.togglePopupVisible}
@@ -59,13 +60,15 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 				{
 					this.state.popupVisible &&
 					(
-						<Popup
-							toggleVisibility={this.togglePopupVisible}
-							render={this.getPopupBody}
-						/>
+						<div className={styles.langPopupWrapper}>
+							<Popup
+								toggleVisibility={this.togglePopupVisible}
+								render={this.getPopupBody}
+							/>
+						</div>
 					)
 				}
-			</>
+			</div>
 		);
 	}
 }

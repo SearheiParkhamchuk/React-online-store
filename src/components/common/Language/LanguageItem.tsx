@@ -14,7 +14,7 @@ const LanguageItem: React.FunctionComponent<ILanguageItem> = (props) => {
 	};
 
 	return (
-		<div onClick={itemHandler}>
+		<div className={styles.itemContainer} onClick={itemHandler}>
 			<span className={`flag-icon flag-icon-${props.icon}`}/>
 			<span className={styles.lang}>{props.lang}</span>
 		</div>

@@ -11,7 +11,7 @@ const Navigation: React.FunctionComponent = () => {
 					<NavLink to={routes.MY_ACCOUNT} className=''>My Account</NavLink>
 				</li>
 				<li>
-					<span className=''>|</span>
+					<span className={styles.separator}>|</span>
 				</li>
 				<li>
 					<NavLink to={routes.BLOG} className=''>Blog</NavLink>

@@ -1,24 +1,23 @@
 .searchContainer {
     width: 100%;
-    max-width: 300px;
     position: relative;
-}
-
-.dark {
-    border-bottom: 2px solid #222;
-}
-
-.light {
-    border-bottom: 2px solid #fff;
 }
 
 .searchField {
     width: 100%;
     border-width: 0;
     height: 20px;
-    padding: 5px 52px 5px 40px;
+    padding: 5px 15px 5px 40px;
     display: block;
     font-size: 16px;
+}
+
+.searchField.dark{
+    border-bottom: 2px solid #222;
+}
+
+.searchField.light{
+    border-bottom: 2px solid #fff;
 }
 
 .searchIcon {

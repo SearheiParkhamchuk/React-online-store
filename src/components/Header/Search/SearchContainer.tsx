@@ -18,9 +18,7 @@ class SearchContainer extends React.Component<ISearchContainerProps> {
 
 	render() {
 		return (
-			<div>
-				<Search isDark={this.props.isDark} onSubmit={this.onSubmit}/>
-			</div>
+			<Search isDark={this.props.isDark} onSubmit={this.onSubmit}/>
 		);
 	}
 }

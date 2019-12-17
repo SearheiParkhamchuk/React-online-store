@@ -1,15 +1,6 @@
-import { IAppState } from './../../entities/App';
 import { Reducer } from 'redux';
 
-interface IItemOfGood {
-	img: string;
-	cost: number;
-	description: string;
-	name: string;
-	id: string;
-}
-
-interface ICart {
+export interface ICart {
 	count: number;
 	goodId: string;
 }
@@ -23,13 +14,18 @@ interface BaseAppActionType {
 }
 
 interface AddGoodToCartActionType extends BaseAppActionType {
-	id: string;
+	goodId: string;
 	count: number;
 }
 
-type AppActionType = AddGoodToCartActionType;
+interface RemoveGoodFromCartActionType extends BaseAppActionType {
+	goodId: string;
+}
+
+type AppActionType = AddGoodToCartActionType & RemoveGoodFromCartActionType;
 
 const ADD_GOOD_TO_CART = 'ADD_GOOD_TO_CART';
+const REMOVE_GOOD_FROM_CART = 'REMOVE_GOOD_FROM_CART';
 
 const initialState: ICartState = {
 	goods: [
@@ -39,7 +35,7 @@ const initialState: ICartState = {
 		},
 		{
 			goodId: '2',
-			count: 3,
+			count: 4,
 		},
 	],
 };
@@ -47,17 +43,33 @@ const initialState: ICartState = {
 export const cartReducer: Reducer<ICartState, AppActionType> = (
 	state: ICartState = initialState,
 	action: AppActionType,
-): IAppState => {
-	const { type, id, count } = action;
+): ICartState => {
+	const { type, goodId, count } = action;
 
 	switch (type) {
-	case ADD_GOOD_TO_CART:
-		return { ...state, langId };
+	case ADD_GOOD_TO_CART: {
+		const isGoodExists: boolean = state.goods.some((obj: ICart) => obj.goodId === goodId);
+		return {
+			...state,
+			goods: isGoodExists ? state.goods.map((good: ICart) =>  {
+				return good.goodId === goodId ? { ...good, count: good.count + count } : good;
+			}) : [...state.goods, { goodId, count }],
+		};
+	}
+	case REMOVE_GOOD_FROM_CART:
+		return {
+			...state,
+			goods: state.goods.filter((good: ICart) => good.goodId !== goodId),
+		};
 	default:
 		return state;
 	}
 };
 
 export const addGoodToCartAction =
-	(id: string, count: number = 1): AddGoodToCartActionType =>
-		({ id, count, type: ADD_GOOD_TO_CART });
+	(goodId: string, count: number = 1): AddGoodToCartActionType =>
+		({ goodId, count, type: ADD_GOOD_TO_CART });
+
+export const removeGoodFromCartAction =
+	(goodId: string): RemoveGoodFromCartActionType =>
+		({ goodId, type: REMOVE_GOOD_FROM_CART });
