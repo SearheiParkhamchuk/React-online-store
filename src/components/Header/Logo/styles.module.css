@@ -1,0 +1,90 @@
+.logoContainer {
+    display: block;
+    position: relative;
+}
+
+.logoContainer:hover .logoInfocard {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 10px;
+    transition-delay: 0s;
+    z-index: 2;
+    top: 55px;
+}
+
+.logoWrapper {
+    display: inline-block;
+}
+
+.logoInfocard {
+    justify-content: space-between;
+    box-shadow: 0 2px 3px rgba(0,0,0,.4);
+    border-radius: 3px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #222;
+    position: absolute;
+    width: 440px;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.6;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    transition: all .15s ease-out;
+    transition-delay: .3s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    top: 80px;
+}
+
+.demoLogo {
+    text-align: center;
+    flex-basis: 40%;
+}
+
+.info {
+    background: url(//demo.kallyas.net/ares-furniture-interior-design/wp-content/themes/kallyas/css/../images/say_hi.png) no-repeat 100% 0;
+}
+
+.info p {
+    margin: 0
+}
+
+.info > div {
+    margin-bottom: 20px;
+}
+
+.info > div:last-child {
+    margin-bottom: 0;
+}
+
+.infoEmail a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.infoEmail a:hover{
+    color: hsla(0,0%,100%,.7)
+}
+
+.infoPhone {
+    font-weight: bold;
+}
+
+.infoMap {
+    color: #fff;
+    text-decoration: none;
+}
+
+.infoMapIcon {
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.infoMap:hover .infoMapText {
+    color: hsla(0,0%,100%,.7)
+}

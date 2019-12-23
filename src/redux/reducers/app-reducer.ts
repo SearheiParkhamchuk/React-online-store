@@ -5,11 +5,14 @@ interface BaseAppActionType {
 	type: string;
 }
 
-interface AppActionType extends BaseAppActionType {
+interface LangActionType extends BaseAppActionType {
 	langId: number;
 }
 
+type AppActionType = LangActionType;
+
 const SET_LANG = 'SET_LANG';
+const TOGGLE_IS_DARK = 'TOGGLE_IS_DARK';
 
 const initialState: IAppState = {
 	langId: 1,
@@ -35,6 +38,7 @@ const initialState: IAppState = {
 			id: 4,
 		},
 	],
+	isDark: true,
 };
 
 export const appReducer: Reducer<IAppState, AppActionType> = (
@@ -46,9 +50,12 @@ export const appReducer: Reducer<IAppState, AppActionType> = (
 	switch (type) {
 	case SET_LANG:
 		return { ...state, langId };
+	case TOGGLE_IS_DARK:
+		return { ...state, isDark: !state.isDark };
 	default:
 		return state;
 	}
 };
 
-export const setLangAction = (langId: number): AppActionType => ({ langId, type: SET_LANG });
+export const setLangAction = (langId: number): LangActionType => ({ langId, type: SET_LANG });
+export const toggleIsDarkAction = (): BaseAppActionType => ({ type: TOGGLE_IS_DARK });
