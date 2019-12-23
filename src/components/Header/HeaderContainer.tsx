@@ -17,7 +17,7 @@ type Props = IHeaderProps;
 
 class HeaderContainer extends React.Component<Props, IHeaderState> {
 	public render() {
-		return <div><Header {...this.props}/></div>;
+		return <div className='header-wrapper'><Header {...this.props}/></div>;
 	}
 }
 

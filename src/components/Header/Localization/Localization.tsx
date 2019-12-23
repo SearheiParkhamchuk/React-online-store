@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Popup from '../../common/Popup/Popup';
-import LanguageItem from '../../common/Language/LanguageItem';
+import LanguageItem from '../../common/LanguageItem';
 import { ILangItem } from '../../../entities/App';
 import styles from './styles.module.css';
 
@@ -53,10 +53,12 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 	public render() {
 		return (
 			<div className={styles.langWrapper}>
-				<LanguageItem
-					{...this.props.lang}
-					itemHandler={this.togglePopupVisible}
-				/>
+				<div className='lang-item-wrapper'>
+					<LanguageItem
+						{...this.props.lang}
+						itemHandler={this.togglePopupVisible}
+					/>
+				</div>
 				{
 					this.state.popupVisible &&
 					(

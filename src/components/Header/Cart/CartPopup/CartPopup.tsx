@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IShortCartItem } from '../Cart';
 import { CartItem } from '../CartItem/CartItem';
 import styles from './styles.module.css';
-import LineSeparator from '../../../common/LineSeparator/LineSeparator';
+import LineSeparator from '../../../common/LineSeparator';
 
 interface ICartPopupProps {
 	subTotal: number;

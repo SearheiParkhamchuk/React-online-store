@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from './styles.module.css';
 
 interface ILineSeparatorProps {
 	isColoring: boolean;
@@ -7,7 +6,7 @@ interface ILineSeparatorProps {
 
 const LineSeparator: React.FC<ILineSeparatorProps> = (props) => {
 	return (
-		<span className={`${styles.line} ${props.isColoring ? styles.color : ''}`}/>
+		<span className={`line-separator ${props.isColoring ? 'line-separator_colored' : ''}`}/>
 	);
 };
 

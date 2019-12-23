@@ -1,0 +1,19 @@
+@import './../variables.scss';
+
+.line-separator {
+    width: 100%;
+    background-color: #ddd;
+    height: 1px;
+    position: relative;
+    display: block;
+
+    &_colored:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25%;
+        background-color: #fc3;
+        height: 1px;
+    }
+}

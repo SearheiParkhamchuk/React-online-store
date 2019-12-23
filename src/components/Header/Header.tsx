@@ -1,5 +1,5 @@
 import * as  React from 'react';
-import SocialNetworks from '../common/SocialNetworks/SocialNetworks';
+import SocialNetworks from '../common/SocialNetworks';
 import Navigation from './Navigation/Navigation';
 import LocalizationContainer from './Localization/LocalizationContainer';
 import Logo from './Logo/Logo';
@@ -13,13 +13,12 @@ interface IHeaderProps {
 }
 
 const Header: React.FunctionComponent<IHeaderProps> = (props: IHeaderProps) => {
-	const { isDark } = props;
 	return (
 		<>
 			<div className={styles.firstRow}>
 				<div className={styles.contactUsContainer}>
-					<SocialNetworks isShort={true} isDark={isDark} />
-					<span>Need Help? Call 0900 800 900</span>
+					<SocialNetworks isShort={true} />
+					<span className='need-help'>Need Help? Call 0900 800 900</span>
 				</div>
 				<div className={styles.navContainer}>
 					<Navigation />

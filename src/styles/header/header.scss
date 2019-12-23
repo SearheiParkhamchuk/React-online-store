@@ -1,0 +1,20 @@
+@import './../variables';
+@import './header-first-row';
+@import './top-nav';
+
+.need-help {
+    color: $defaultColor;
+}
+
+.dark-theme .need-help {
+    color: $defaultLightColor;
+}
+
+.header-wrapper {
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.dark-theme .header-wrapper {
+    background-color: $defaultColor;
+}

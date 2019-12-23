@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './styles.module.css';
+import { NavLink } from 'react-router-dom';
 
 interface ISocialNetworkItem {
 	name: string;
@@ -7,7 +7,6 @@ interface ISocialNetworkItem {
 }
 
 interface ISocialNetworksProps {
-	isDark?: boolean;
 	isShort?: boolean;
 }
 
@@ -30,21 +29,21 @@ const socialNetworks: ISocialNetworkItem[] = [
 	},
 ];
 
-const SocialNetworks: React.FunctionComponent<ISocialNetworksProps> = ({ isDark, isShort }) => {
+const SocialNetworks: React.FunctionComponent<ISocialNetworksProps> = ({ isShort }) => {
 
 	const socialNetworksJSX = socialNetworks.map((item: ISocialNetworkItem) => {
 		return (
-			<li key={item.name} className={styles.listItem}>
-				<a href='' title={isShort ? item.name : ''}>
-					<i className={`${item.icon} ${styles.icon}`}/>
-				</a>
+			<li key={item.name} className={`social-networks-item ${isShort ? 'social-networks-item_line' : '' }`}>
+				<NavLink to={''} title={isShort ? item.name : ''}>
+					<i className={`${item.icon} social-networks-item__icon`}/>
+				</NavLink>
 			</li>
 		);
 	});
 
 	return (
 		<div>
-			<ul className={`${isShort ? styles.line : ''} ${isDark ? styles.dark : styles.light} clear-list-styles`}>
+			<ul className='social-networks clear-list-styles'>
 				{socialNetworksJSX}
 			</ul>
 		</div>

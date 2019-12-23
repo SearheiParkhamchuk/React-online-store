@@ -1,0 +1,26 @@
+@import './../variables.scss';
+
+.social-networks {
+    &-item {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+
+        &_line {
+            display: inline-block;
+        }
+
+        &__icon {
+            font-size: 16px;
+            color: $defaultColor;
+        }
+    }
+}
+
+.dark-theme .social-networks{
+    &-item {
+        &__icon {
+            color: $defaultLightColor;
+        }
+    }
+}

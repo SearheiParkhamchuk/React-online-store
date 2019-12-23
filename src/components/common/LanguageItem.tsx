@@ -1,6 +1,5 @@
 import * as React from 'react';
-import styles from './styles.module.css';
-import { ILangItem } from '../../../entities/App';
+import { ILangItem } from '../../entities/App';
 
 interface ILanguageItem extends ILangItem {
 	itemHandler?: (id: number) => void;
@@ -14,9 +13,9 @@ const LanguageItem: React.FunctionComponent<ILanguageItem> = (props) => {
 	};
 
 	return (
-		<div className={styles.itemContainer} onClick={itemHandler}>
-			<span className={`flag-icon flag-icon-${props.icon}`}/>
-			<span className={styles.lang}>{props.lang}</span>
+		<div className='lang-item' onClick={itemHandler}>
+			<span className={`lang-item__icon flag-icon flag-icon-${props.icon}`}/>
+			<span className='lang-item__lang'>{props.lang}</span>
 		</div>
 	);
 };

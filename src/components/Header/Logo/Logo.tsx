@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './styles.module.css';
 import logoSvg from './../../../logo.svg';
-import SocialNetworks from '../../common/SocialNetworks/SocialNetworks';
+import SocialNetworks from '../../common/SocialNetworks';
 
 export interface IAppProps {
 }
