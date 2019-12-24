@@ -38,7 +38,7 @@ const initialState: IAppState = {
 			id: 4,
 		},
 	],
-	isDark: true,
+	isDark: false,
 };
 
 export const appReducer: Reducer<IAppState, AppActionType> = (

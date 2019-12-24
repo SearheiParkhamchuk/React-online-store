@@ -1,0 +1,32 @@
+@import './../variables.scss';
+
+.cart-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    &__icon {
+        font-size: 30px;
+        color: $defaultColor;
+    }
+
+    &__counter {
+        display: block;
+        position: absolute;
+        background-color: #f66;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        color: $defaultLightColor;
+        font-weight: bold;
+        text-align: center;
+        top: 0;
+        right: -5px;
+    }
+}
+
+.dark-theme .cart-icon {
+    &__icon {
+        color: $defaultLightColor;
+    }
+}

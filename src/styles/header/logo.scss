@@ -1,0 +1,87 @@
+@import './../variables.scss';
+
+.logo {
+    display: block;
+    position: relative;
+
+    &:hover &-infocard {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 10px;
+        transition-delay: 0s;
+        z-index: 2;
+        top: 55px;
+    }
+
+    &-image {
+        display: inline-block;
+    }
+
+    &-infocard {
+        justify-content: space-between;
+        box-shadow: 0 2px 3px rgba(0,0,0,.4);
+        border-radius: 3px;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background-color: #222;
+        position: absolute;
+        width: 440px;
+        margin-top: 20px;
+        color: #fff;
+        font-weight: 400;
+        line-height: 1.6;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 1;
+        transition: all .15s ease-out;
+        transition-delay: .3s;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        top: 80px;
+
+        &__demo {
+            text-align: center;
+            flex-basis: 40%;
+        }
+
+        &__info {
+            background: url(//demo.kallyas.net/ares-furniture-interior-design/wp-content/themes/kallyas/css/../images/say_hi.png) no-repeat 100% 0;
+        }
+    }
+}
+
+.contact-info {
+    a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+            color: hsla(0,0%,100%,.7)
+        }
+    }
+
+    &__block {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__phone {
+        font-weight: bold;
+    }
+}
+
+.map-icon {
+    &:hover &__text {
+        color: inherit;
+    }
+
+    &__icon {
+        margin-right: 5px;
+        display: inline-block;
+    }
+}

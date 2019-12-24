@@ -1,0 +1,51 @@
+@import './../variables.scss';
+
+.search {
+    width: 100%;
+    position: relative;
+
+    &__icon {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        position: absolute;
+        transform: translateY(50%);
+        left: 5px;
+        color: $defaultColor;
+        font-size: 14px;
+    }
+
+    &__field {
+        width: 100%;
+        border-width: 0;
+        font-size: 12px;
+        height: 35px;
+        padding-left: 40px;
+        display: block;
+        border-bottom: 2px solid $defaultColor;
+        color: $defaultColor;
+        background-color: transparent;
+
+        &::placeholder  {
+            color: $defaultColor;
+        }
+    }
+}
+
+.dark-theme .search {
+    &__icon {
+        cursor: pointer;
+        color: $defaultLightColor;
+    }
+
+    &__field {
+        border-bottom: 2px solid $defaultLightColor;
+        color: $defaultLightColor;
+        background-color: transparent;
+
+        &::placeholder  {
+            color: $defaultLightColor;
+        }
+    }
+}

@@ -1,8 +1,37 @@
 @import './../variables';
-@import './header-first-row';
 @import './top-nav';
+@import './localization';
+@import './logo.scss';
+@import './search.scss';
+@import './cart.scss';
+
+%border-button {
+    display: block;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 12px;
+}
 
 .need-help {
+    color: $defaultColor;
+}
+
+.custom-furniture-button {
+    margin-right: 40px;
+}
+
+.border-button_light {
+    @extend %border-button;
+    border: 2px solid $defaultLightColor;
+    color: $defaultLightColor;
+}
+
+.border-button_dark {
+    @extend %border-button;
+    border: 2px solid $defaultColor;
     color: $defaultColor;
 }
 
@@ -10,11 +39,18 @@
     color: $defaultLightColor;
 }
 
-.header-wrapper {
+.header-inner {
     max-width: 1700px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-.dark-theme .header-wrapper {
+.dark-theme.header-wrapper {
     background-color: $defaultColor;
+    position: relative;
+
+    &_absolute {
+        position: absolute;
+    }
 }
+

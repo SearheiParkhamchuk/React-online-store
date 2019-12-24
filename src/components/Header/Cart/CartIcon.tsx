@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from './styles.module.css';
 
 interface ICartIconProps {
 	goodsCount: number;
@@ -8,9 +7,9 @@ interface ICartIconProps {
 export const CartIcon: React.FC<ICartIconProps> = (props) => {
 	const { goodsCount = 0 } = props;
 	return (
-		<div className={`${styles.cartIconWrapper}`}>
-			<span className={`fas fa-shopping-cart ${styles.cartIcon}`}/>
-			<span className={`${styles.cartCount}`}>{goodsCount}</span>
+		<div className='cart-icon'>
+			<span className='fas fa-shopping-cart cart-icon__icon'/>
+			<span className='cart-icon__counter'>{goodsCount}</span>
 		</div>
 	);
 };

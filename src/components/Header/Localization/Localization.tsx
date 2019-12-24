@@ -2,7 +2,6 @@ import * as React from 'react';
 import Popup from '../../common/Popup/Popup';
 import LanguageItem from '../../common/LanguageItem';
 import { ILangItem } from '../../../entities/App';
-import styles from './styles.module.css';
 
 interface ILocalizationProps {
 	lang: ILangItem;
@@ -39,12 +38,19 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 		return items
 			.filter((item: ILangItem) => item.id !== this.props.lang.id)
 			.map((item: ILangItem) =>
-				(<li key={item.id}><LanguageItem {...item} itemHandler={this.chooseLanguage}/></li>));
+				(
+					<li className='lang-popup-item' key={item.id}>
+						<LanguageItem
+							{...item}
+							itemHandler={this.chooseLanguage}
+						/>
+					</li>
+				));
 	}
 
 	private getPopupBody() {
 		return (
-			<ul className={`clear-list-styles ${styles.innerPopupContent}`}>
+			<ul className='clear-list-styles'>
 				{this.getLanguagesItemsJSX(this.props.langs)}
 			</ul>
 		);
@@ -52,7 +58,7 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 
 	public render() {
 		return (
-			<div className={styles.langWrapper}>
+			<div className='lang'>
 				<div className='lang-item-wrapper'>
 					<LanguageItem
 						{...this.props.lang}
@@ -62,7 +68,7 @@ class Localization extends React.Component<ILocalizationProps, ILocalizationStat
 				{
 					this.state.popupVisible &&
 					(
-						<div className={styles.langPopupWrapper}>
+						<div className='lang-popup'>
 							<Popup
 								toggleVisibility={this.togglePopupVisible}
 								render={this.getPopupBody}

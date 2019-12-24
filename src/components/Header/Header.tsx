@@ -26,13 +26,18 @@ const Header: React.FunctionComponent<IHeaderProps> = (props: IHeaderProps) => {
 				</div>
 			</div>
 			<div className={styles.secondRow}>
-				<Logo />
+				<Logo isDark={props.isDark} />
 				<div className={styles.searchWrapper}>
 					<SearchContainer />
 				</div>
 				<div>
 					<div>
-						<NavLink className={styles.customFurnitureButton} to={''}>Custom Furniture</NavLink>
+						<NavLink
+							className={`custom-furniture-button border-button_${props.isDark ? 'light' : 'dark'}`}
+							to={''}
+						>
+								Custom Furniture
+						</NavLink>
 					</div>
 					<CartContainer />
 				</div>

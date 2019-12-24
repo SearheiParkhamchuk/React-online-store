@@ -1,11 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { AppState } from '../../../redux/store';
 import Search from './Search';
 
-export interface ISearchContainerProps {
-	isDark: boolean;
-}
+export interface ISearchContainerProps {}
 
 export interface ISearchFromData {
 	search: string;
@@ -18,17 +15,13 @@ class SearchContainer extends React.Component<ISearchContainerProps> {
 
 	render() {
 		return (
-			<Search isDark={this.props.isDark} onSubmit={this.onSubmit}/>
+			<Search onSubmit={this.onSubmit}/>
 		);
 	}
 }
 
-const mapStateToProps = (state: AppState) => ({
-	isDark: state.app.isDark,
-});
+const mapStateToProps = () => ({});
 
-const mapDispatchToProps = {
-
-};
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);

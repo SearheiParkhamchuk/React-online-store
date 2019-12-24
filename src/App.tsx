@@ -1,20 +1,36 @@
 import * as  React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, withRouter, RouteComponentProps } from 'react-router-dom';
 import './index.scss';
 import HeaderContainer from './components/Header/HeaderContainer';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import store from './redux/store';
+import { compose } from 'redux';
 
-const App: React.FunctionComponent = () => {
+class App extends React.Component {
+	render () {
+		return (
+			<BrowserRouter>
+				<Provider store={store}>
+					<HeaderContainer />
+				</Provider>
+			</BrowserRouter>
+		);
+	}
+}
+
+const AppContainer = compose(
+	withRouter,
+	connect(),
+)(App);
+
+const NewApp = (props: RouteComponentProps<any>) => {
 	return (
 		<BrowserRouter>
 			<Provider store={store}>
-				<div className={`app-wrapper ${store.getState().app.isDark ? 'dark-theme' : ''}`}>
-					<HeaderContainer />
-				</div>
+				<AppContainer {...props} />
 			</Provider>
 		</BrowserRouter>
 	);
 };
 
-export default App;
+export default NewApp;
