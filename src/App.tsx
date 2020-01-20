@@ -1,33 +1,31 @@
 import * as  React from 'react';
-import { BrowserRouter, withRouter, RouteComponentProps } from 'react-router-dom';
+import { BrowserRouter, withRouter } from 'react-router-dom';
 import './index.scss';
 import HeaderContainer from './components/Header/HeaderContainer';
 import { Provider, connect } from 'react-redux';
-import store from './redux/store';
+import store, { AppState } from './redux/store';
 import { compose } from 'redux';
 
 class App extends React.Component {
 	render () {
 		return (
-			<BrowserRouter>
-				<Provider store={store}>
-					<HeaderContainer />
-				</Provider>
-			</BrowserRouter>
+			<HeaderContainer />
 		);
 	}
 }
 
+const mapStateToProps = (state: AppState) => ({});
+
 const AppContainer = compose(
 	withRouter,
-	connect(),
-)(App);
+	connect(mapStateToProps, {}),
+)(App) as any;
 
-const NewApp = (props: RouteComponentProps<any>) => {
+const NewApp = () => {
 	return (
 		<BrowserRouter>
 			<Provider store={store}>
-				<AppContainer {...props} />
+				<AppContainer />
 			</Provider>
 		</BrowserRouter>
 	);

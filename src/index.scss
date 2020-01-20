@@ -32,6 +32,12 @@
   margin: 0;
 }
 
+.clear-link-styles a,
+a.clear-link-styles {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: Montserrat, Helvetica, Arial,sans-serif;
   font-size: 13px;

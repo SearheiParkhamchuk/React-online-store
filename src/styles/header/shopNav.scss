@@ -1,0 +1,37 @@
+@import './../variables.scss';
+
+.shop-menu-item {
+    font-weight: 400;
+    font-size: 18px;
+    display: inline-block;
+    font-family: "Playfair Display",Helvetica,Arial,sans-serif;
+    margin-right: 25px;
+    line-height: 35px;
+    height: 35px;
+    vertical-align: middle;
+    &__link {
+
+    }
+
+    &__separator {
+        width: 2px;
+        height: 100%;
+        background-color: #f2f2f2;
+    }
+
+    &__sub {
+
+    }
+
+    &_active {
+        color: $defaultYellowColor
+    }
+
+    &:hover {
+        color: $defaultYellowColor
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

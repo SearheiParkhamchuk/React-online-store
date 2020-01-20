@@ -7,6 +7,7 @@ import SearchContainer from './Search/SearchContainer';
 import CartContainer from './Cart/CartContainer';
 import styles from './styles.module.css';
 import { NavLink } from 'react-router-dom';
+import { ShopNavigation } from './ShopNavigation/ShopNavigation';
 
 interface IHeaderProps {
 	isDark: boolean;
@@ -41,6 +42,9 @@ const Header: React.FunctionComponent<IHeaderProps> = (props: IHeaderProps) => {
 					</div>
 					<CartContainer />
 				</div>
+			</div>
+			<div className='header-row__third'>
+				< ShopNavigation />
 			</div>
 		</>
 	);
