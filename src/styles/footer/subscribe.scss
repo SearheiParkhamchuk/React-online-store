@@ -1,0 +1,48 @@
+.subscribe {
+    &-input {
+        &__input {
+            box-sizing: border-box;
+            height: 45px;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            padding-left: 20px;
+            -webkit-transition: padding-left .15s ease-out;
+            transition: padding-left .15s ease-out;
+
+            &:focus {
+                padding-left: 28px;
+                border-color: $greyColor;
+            }
+        }
+
+        &__message {
+            color: red;
+        }
+    }
+
+    &__field {
+
+    }
+
+    &__button {
+        color: #fff;
+        background-color: $defaultYellowColor;
+        text-transform: uppercase;
+        height: 45px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 130px;
+        border-radius: 3px;
+        transition: background-color .5s ease;
+
+        &:hover {
+            background-color: $defaultColor;
+        }
+    }
+}

@@ -4,7 +4,7 @@ import { routes } from './../../../constants/routes';
 
 const Navigation: React.FunctionComponent = () => {
 	return (
-		<div className='top-nav'>
+		<nav className='top-nav'>
 			<div className='top-nav__left'>
 				<ul className='clear-list-styles'>
 					<li className='top-nav-item'>
@@ -31,7 +31,7 @@ const Navigation: React.FunctionComponent = () => {
 					</li>
 				</ul>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

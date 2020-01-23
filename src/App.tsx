@@ -5,11 +5,16 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import { Provider, connect } from 'react-redux';
 import store, { AppState } from './redux/store';
 import { compose } from 'redux';
+import { FooterContainer } from './components/Footer/FooterContainer';
 
 class App extends React.Component {
 	render () {
 		return (
-			<HeaderContainer />
+			<div className='wrapper'>
+				<HeaderContainer />
+				<div className='content'>sdsfgsdfg</div>
+				<FooterContainer />
+			</div>
 		);
 	}
 }
